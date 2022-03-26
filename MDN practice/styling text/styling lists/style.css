@@ -1,0 +1,18 @@
+.container {
+    width: 100vw;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container ul{
+    list-style: square;
+}
+
+.container ul li, ol li {
+    line-height: 1.5;
+  }
+
+.container li ol{
+    list-style: lower-alpha;
+}

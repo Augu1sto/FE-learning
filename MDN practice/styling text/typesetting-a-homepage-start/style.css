@@ -1,0 +1,143 @@
+/* General setup */
+@import url('fonts/Aller/stylesheet.css');
+@import url('fonts/go/stylesheet.css');
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+  }
+
+
+  /* Layout */
+  
+  section {
+    float: left;
+    width: 50%;
+  }
+  
+  aside {
+    float: left;
+    width: 30%;
+  }
+  
+  nav {
+    float: left;
+    width: 20%;
+  }
+  
+  footer {
+    clear: both;
+  }
+  
+  header, section, aside, nav, footer {
+    padding: 20px;
+  }
+  
+  /* header and footer */
+  
+  header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+  }
+  
+  /* WRITE YOUR CODE BELOW HERE */
+  *{
+    font-size: 10px;
+  }
+  body{
+    font-family: 'aller', sans-serif;
+    line-height: 1.3;
+    letter-spacing: 0;
+    word-spacing: 0.3em;
+  }
+
+
+  /* titles&text */
+  h1, h2 {
+    font-family: 'go', serif;
+    font-weight: bolder;
+  }
+
+  h1{
+    font-size: 5rem;
+  }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  header{
+    text-align: center;
+    letter-spacing: 0.3em;
+  }
+  
+  
+  section h2+p{
+    text-indent: 20px;
+  }
+
+  /* links */
+  a {
+    color: #a66;
+  }
+
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+
+  a:focus{
+    outline: none;
+  }
+
+  a:active{
+    background-color: rgba(170, 102, 102, 0.315);
+  }
+
+  a[href^="http"]{
+    background: url('external-link-52.png')  no-repeat 100% 0;
+    background-size: 1em 1em;
+    padding-right: 1.2em;
+  }
+
+  /* list？nothing to do? */
+  /* nav */
+  nav ul{
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    
+  }
+
+  nav li{
+    border: 2px solid #a66;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  nav li a{
+    text-decoration: none;
+    font: 2em 'go';
+  }
+
+  nav li:hover{
+    background-color: #a66;
+    cursor: pointer;
+  }
+
+  nav li:hover a{
+    color: #fff;
+  }
+
+  nav li:active{
+    background-color: rgba(170, 102, 102, 0.788) ;
+  }
+
+  nav a:active{
+    background-color: rgba(170, 102, 102, 0);
+  }
