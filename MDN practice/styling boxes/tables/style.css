@@ -1,0 +1,36 @@
+table {
+    font-size: 75%;
+    border-collapse: collapse;
+}
+
+thead th:nth-child(2),th:nth-child(3){
+    text-align: right;
+}
+
+tbody td:nth-child(2),td:nth-child(3){
+    text-align: right;
+}
+
+thead th:nth-child(1),th:nth-child(4){
+    text-align: left;
+}
+
+tbody th:nth-child(1),td:nth-child(4){
+    text-align: left;
+}
+
+tfoot th{
+    text-align: right;
+}
+
+tbody tr:nth-child(odd){
+    background-color: lightgray
+}
+
+thead, tfoot{
+    border-top: 1px solid lightgray;
+}
+
+tfoot{
+    border-bottom: 1px solid lightgray;
+}
