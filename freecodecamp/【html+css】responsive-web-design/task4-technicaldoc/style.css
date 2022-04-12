@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Roboto:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    position: relative;
+    margin: 0 auto;
+    background-color: #F4F4F4;
+}
+
+/* ------- navtoggle-------------
+------------------------------ */
+/* toggle_label */
+.toggle_label {
+    position: fixed;
+    right: 15px;
+    top: 10px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.toggle_label>i {
+    color: rgb(102, 204, 153);
+    font-size: 1.5rem;
+    transition: 200ms;
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked~.toggle_label>i {
+    transform: rotate(90deg);
+    color: white;
+    transition: 200ms;
+}
+/* navigator */
+#navbar {
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    position: fixed;
+    left: -100vw;
+    padding: 20px;
+    background-color: rgb(102, 204, 153, 0.9);
+    color: #F4F4F4;
+    text-align: center;
+    transition: 200ms;
+}
+
+#toggle:checked~#navbar {
+    left: 0;
+    transition: 200ms;
+}
+
+#navbar>header>h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+
+#navbar>header {
+    border-bottom: 2px solid white;
+}
+
+#navbar>ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    padding-left: 0;
+    padding-bottom: 10px;
+    height: 100%;
+    overflow: auto;
+    /* gap: 0; */
+}
+
+
+#navbar>ul::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 8px;
+}
+/* 滚动槽 */
+#navbar>ul::-webkit-scrollbar-track {
+    background-color: rgba(85, 85, 85, 0.644);
+}
+/* 滚动条滑块 */
+#navbar>ul::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: white;
+}
+
+#navbar li {
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+#navbar li a{
+    line-height: 3rem;
+    color: #F4F4F4;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+#navbar li:focus, #navbar li:hover {
+    background-color: #f4f4f48a;
+}
+
+#navbar li:active>a{
+    color: rgb(102, 204, 153);
+}
+
+#navbar li:active{
+    background-color: #F4F4F4;
+}
+
+
+
+/* ------- main content -------------
+------------------------------ */
+code {
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #666699;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-family: 'Fira Mono', monospace;
+    font-size: 13px;
+    color: #F4F4F4;
+    overflow-x: auto;
+}
+
+#main-doc {
+    padding: 40px;
+}
+
+.main-section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(102, 204, 153);
+}
+
+.main-section:last-child {
+    border-bottom: 0;
+
+}
+
+.main-section h2 {
+    font-size: 1.5rem;
+    color: rgb(102, 204, 153);
+    letter-spacing: 1px;
+}
+
+.main-section h2::before {
+    content: "\2714";
+    margin-left: -15px;
+    margin-right: 15px;
+    color: rgb(102, 204, 153);
+}
+
+.main-section article {
+    font-weight: 400;
+    color: rgb(99, 99, 99);
+    line-height: 1.3rem;
+}
+
+.main-section article li {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+a {
+    color: rgb(102, 204, 153);
+}
+
+a:visited {
+    color: #666699;
+}
+
+a:focus, a:hover, a:active {
+    text-decoration: none;
+}
+
+/* 响应式 */
+@media screen and (min-width: 768px) {
+    .toggle_label {
+        display: none;
+    }
+
+    #navbar {
+        left: 0;
+        width: 300px;
+    }
+
+    #main-doc {
+        position: absolute;
+        left: 300px;
+    }
+}
+
+
+
