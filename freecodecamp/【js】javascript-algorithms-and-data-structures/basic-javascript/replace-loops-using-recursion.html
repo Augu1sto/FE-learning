@@ -1,0 +1,11 @@
+function sum(arr, n) {
+  // 只修改这一行下面的代码
+  if (n == 0) {
+    return 0;
+  }
+  if (n == 1) {
+    return arr[0];
+  }
+  return arr[n-1] + sum(arr, n-1);
+  // 只修改这一行上面的代码
+}
