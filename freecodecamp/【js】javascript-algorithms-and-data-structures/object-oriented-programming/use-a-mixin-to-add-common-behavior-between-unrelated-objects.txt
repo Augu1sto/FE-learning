@@ -1,0 +1,22 @@
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+// 只修改这一行下面的代码
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log('[' + this.name + "] I can glide!");
+  }
+}
+
+glideMixin(bird);
+glideMixin(boat);
+
+bird.glide();
+boat.glide();

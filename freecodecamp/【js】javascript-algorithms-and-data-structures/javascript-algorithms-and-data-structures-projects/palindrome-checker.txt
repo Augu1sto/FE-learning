@@ -1,0 +1,14 @@
+function palindrome(str) {
+  let purifiedStr = str.replace(/[\W|_]+/g, '').toLowerCase();
+  console.log(purifiedStr);
+  const isPalindrome = (st) => {
+    let mid = Math.ceil(st.length / 2);
+    // last half of the string
+    let lastHalf = st.slice(mid).split("");
+
+    return lastHalf.every((ch, index) => ch === st[lastHalf.length - index - 1]);
+  }
+  return isPalindrome(purifiedStr);
+}
+
+palindrome("eyYe");

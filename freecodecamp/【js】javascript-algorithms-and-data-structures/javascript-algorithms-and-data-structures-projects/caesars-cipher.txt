@@ -1,0 +1,10 @@
+function rot13(str) {
+  const base = 'A'.charCodeAt()
+  let res = str.replace(/(\w)/g, match => {
+    return String.fromCharCode((match.charCodeAt() - base + 13) % 26 + base);
+  });
+  console.log(res);
+  return res;
+}
+
+rot13("SERR PBQR PNZC");

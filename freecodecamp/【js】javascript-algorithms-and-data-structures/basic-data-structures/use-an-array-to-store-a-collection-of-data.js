@@ -1,0 +1,1 @@
+let yourArray = ['hello', 12, 11, 10, false]; // 修改这一行

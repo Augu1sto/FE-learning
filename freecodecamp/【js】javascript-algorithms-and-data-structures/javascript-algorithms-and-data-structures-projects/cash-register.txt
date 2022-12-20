@@ -1,0 +1,64 @@
+const table = [
+    ["ONE HUNDRED", 100], 
+    ["TWENTY", 20], 
+    ["TEN", 10], 
+    ["FIVE", 5], 
+    ["ONE", 1], 
+    ["QUARTER", 0.25],
+    ["DIME", 0.1],
+    ["NICKEL", 0.05],
+    ["PENNY", 0.01]
+  ]
+
+const computeFloat = (x, digit=2) => {
+  return Number(parseFloat(x).toFixed(digit));
+}
+
+function checkCashRegister(price, cash, cid) {
+  let change = [];
+  let changeDue = computeFloat(cash - price);
+
+  let res;
+
+  // let total = cid.reduce(sum, item => sum + item[1], 0);
+
+
+  for (let i = 0; i < table.length; i++) {
+    if(table[i][1] > changeDue) {
+      continue;
+    }
+      console.log(changeDue);
+
+    if (table[i][1] <= changeDue) {
+      console.log(i)
+      let remain = cid[cid.length - 1 -i][1];
+      let amount = 0;
+      while (computeFloat(amount+table[i][1]) <= remain && table[i][1] <= changeDue) {
+        amount = computeFloat(amount + table[i][1]);
+        changeDue = computeFloat(changeDue - table[i][1]);
+
+      }
+      change.push([table[i][0], amount]);
+    }
+  }
+  console.log(change);
+  console.log(changeDue);
+  if( changeDue==0.00 ) {
+    if (cid.reduce((sum, item) => computeFloat(sum + item[1]), 0) == computeFloat(cash - price)) {
+
+      res = {status: "CLOSED", change: cid};
+    } else {
+      res = {status: "OPEN", change: change};
+    }
+  } else {
+    res= {status: "INSUFFICIENT_FUNDS", change: []};
+  }
+  console.log(res);
+  return res;
+}
+
+checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+
+// checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])
+
+// checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])

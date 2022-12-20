@@ -1,0 +1,69 @@
+const convertTable = [
+    {
+        "Roman": "M",
+        "Arabic": 1000
+    },
+    {
+        "Roman": "CM",
+        "Arabic": 900
+    },
+    {
+        "Roman": "D",
+        "Arabic": 500
+    },
+    {
+        "Roman": "CD",
+        "Arabic": 400
+    },
+    {
+        "Roman": "C",
+        "Arabic": 100
+    },
+    {
+        "Roman": "XC",
+        "Arabic": 90
+    },
+    {
+        "Roman": "L",
+        "Arabic": 50
+    },
+    {
+        "Roman": "XL",
+        "Arabic": 40
+    },
+    {
+        "Roman": "X",
+        "Arabic": 10
+    },
+    {
+        "Roman": "IX",
+        "Arabic": 9
+    },
+    {
+        "Roman": "V",
+        "Arabic": 5
+    },
+    {
+        "Roman": "IV",
+        "Arabic": 4
+    },
+    {
+        "Roman": "I",
+        "Arabic": 1
+    }
+]
+
+function convertToRoman(num) {
+  if(num === 0) {
+    return '';
+  }
+
+  for (let i = 0; i < 13; i ++ ){
+    if (num >= convertTable[i]['Arabic']) {
+      return convertTable[i]['Roman'] + convertToRoman(num - convertTable[i]['Arabic']);
+    }
+
+  }
+}
+
+convertToRoman(36);

@@ -1,0 +1,13 @@
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+// 只修改这一行下面的代码
+
+let duck = Object.create(Animal.prototype); // 修改这一行
+let beagle = Object.create(Animal.prototype); // 修改这一行

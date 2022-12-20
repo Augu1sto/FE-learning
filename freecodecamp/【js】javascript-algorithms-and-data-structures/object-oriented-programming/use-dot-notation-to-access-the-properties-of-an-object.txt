@@ -1,0 +1,7 @@
+let dog = {
+  name: "Spot",
+  numLegs: 4
+};
+// 只修改这一行下面的代码
+console.log(dog.name);
+console.log(dog.numLegs);
