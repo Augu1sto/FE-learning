@@ -216,7 +216,7 @@ h1 {
     margin-left: 10px;
 }
 
-.project-title {
+.project-tile {
     padding: 10px;
     width: 90%;
     /* height: 70%; */
@@ -482,7 +482,7 @@ i.infopic {
         transition: 300ms;
     }
 
-    .project-title {
+    .project-tile {
         padding: 10px;
         display: flex;
         flex-direction: column;

@@ -1,0 +1,15 @@
+function nextInLine(arr, item) {
+  // 只修改这一行下面的代码
+  arr.push(item);
+  item = arr.shift();
+  return item;
+  // 只修改这一行上面的代码
+}
+
+// 设置
+const testArr = [1, 2, 3, 4, 5];
+
+// 显示代码
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));

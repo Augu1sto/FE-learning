@@ -1,0 +1,13 @@
+// 只修改这一行下面的代码
+function countdown(n){
+  if (n < 1) {
+    return [];
+  }
+  if (n === 1) {
+    return [1];
+  }
+  let a = countdown(n-1);
+  a.unshift(n);
+  return a;
+}
+// 只修改这一行上面的代码
